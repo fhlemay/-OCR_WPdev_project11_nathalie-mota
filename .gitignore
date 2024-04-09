@@ -18,8 +18,8 @@
 /xmlrpc.php
 /local-xdebuginfo.php
 
-# Configuration
-wp-config.php
+# Include configuration
+!wp-config.php
 
 # Example themes
 /wp-content/themes/twenty*/
