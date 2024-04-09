@@ -19,7 +19,7 @@
 /local-xdebuginfo.php
 
 # Include configuration
-!wp-config.php
+# wp-config.php
 
 # Example themes
 /wp-content/themes/twenty*/
