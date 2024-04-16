@@ -14,4 +14,7 @@ define("__CPT_DIR__", __DIR__ . '/photo-cpt');
 // Custom Post Type setup
 require_once __CPT_DIR__ . '/photo-cpt.php';
 
+// Taxonomies setup
+require_once __CPT_DIR__ . '/photo-taxonomies.php';
+
 
