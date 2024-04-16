@@ -1,5 +1,9 @@
 <?php
 
+
+define('TEXT_DOMAIN', 'nathalie-mota'); // translation domain
+
+
 // Activer le mode debug
 if (!defined('WP_DEBUG')) {
   define('WP_DEBUG', true); // on active les erreurs
