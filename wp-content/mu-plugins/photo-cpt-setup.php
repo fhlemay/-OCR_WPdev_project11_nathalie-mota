@@ -10,7 +10,7 @@ define('POST_TYPE_SLUG', 'photo');
 define("__CPT_DIR__", __DIR__ . '/photo-cpt');
 
 // ATTENTION : l'ordre des appels est important
-//
+
 // Custom Post Type setup
 require_once __CPT_DIR__ . '/photo-cpt.php';
 
@@ -20,4 +20,5 @@ require_once __CPT_DIR__ . '/photo-meta-boxes.php';
 // Taxonomies setup
 require_once __CPT_DIR__ . '/photo-taxonomies.php';
 
-
+// Custom fields setup
+require_once __CPT_DIR__ . '/photo-acf.php';

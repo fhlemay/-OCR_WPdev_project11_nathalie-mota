@@ -79,8 +79,8 @@ function type_meta_box_html($post)
   <p>
     <label for="type">Type:</label>
     <select name="type" id="type">
-      <option value="argentique" <?php selected($type, 'argentique'); ?>>Argentique</option>
-      <option value="numérique" <?php selected($type, 'numérique'); ?>>Numérique</option>
+      <option value="Argentique" <?php selected($type, 'Argentique'); ?>>Argentique</option>
+      <option value="Numérique" <?php selected($type, 'Numérique'); ?>>Numérique</option>
     </select>
   </p>
 <?php
