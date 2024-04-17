@@ -23,7 +23,7 @@ declare(strict_types=1);
 
 namespace Headache;
 
-use Ramsey\Uuid\Uuid;
+// use Ramsey\Uuid\Uuid;
 
 // Redirects all feeds to home page.
 function disable_feeds(): void
@@ -260,21 +260,22 @@ function disable_attachment_link(string $url, int $id): string
 
 add_filter('attachment_link', __NAMESPACE__ . '\\disable_attachment_link', 10, 2);
 
+// Creat an critical error with uploading media.
 // Randomize attachment slugs using UUIDs to avoid slug reservation.
-function disable_attachment_slug_reservation(string $slug, string $id, string $status, string $type): string
-{
-  if ($type !== 'attachment') {
-    return $slug;
-  }
+// function disable_attachment_slug_reservation(string $slug, string $id, string $status, string $type): string
+// {
+//   if ($type !== 'attachment') {
+//     return $slug;
+//   }
+//
+//   if (preg_match('/^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}$/iD', $slug) > 0) {
+//     return $slug;
+//   }
+//
+//   return (string) Uuid::uuid4();
+// }
 
-  if (preg_match('/^[\da-f]{8}-[\da-f]{4}-[\da-f]{4}-[\da-f]{4}-[\da-f]{12}$/iD', $slug) > 0) {
-    return $slug;
-  }
-
-  return (string) Uuid::uuid4();
-}
-
-add_filter('wp_unique_post_slug', __NAMESPACE__ . '\\disable_attachment_slug_reservation', 10, 4);
+// add_filter('wp_unique_post_slug', __NAMESPACE__ . '\\disable_attachment_slug_reservation', 10, 4);
 
 // Discourage search engines from indexing in non-production environments.
 function disable_indexing()
