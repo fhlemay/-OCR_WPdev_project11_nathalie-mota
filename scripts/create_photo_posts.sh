@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Convert photos to webp before anything else
+./convert_and_resize_photos.sh
+
 # Get the directory of the current script
 SCRIPT_DIR=$(dirname "$0")
 
@@ -23,18 +26,12 @@ do
 
   # Upload and attach the thumbnail photo
   if [[ -f "$PHOTOS_DIR/$fichier" ]]; then
-    # wp media import "$PHOTOS_DIR/$fichier"
     wp media import "$PHOTOS_DIR/$fichier" --post_id=$POST_ID --featured_image --porcelain
-    # ATTACH_ID=$(wp media import "$PHOTOS_DIR/$fichier" --post_id=$POST_ID --porcelain)
-    # wp post meta set $POST_ID _thumbnail_id $ATTACH_ID
   fi
 
   # Optional: Set the post date if 'année' is to be used as the post date
   # You might need to ensure the date format is correct for your setup
   wp post update $POST_ID --post_date="$annee-01-01"
-
-  #TESTING : only import one post
-  break
 
 done
 
