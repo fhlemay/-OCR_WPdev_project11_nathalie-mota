@@ -18,6 +18,9 @@
 /xmlrpc.php
 /local-xdebuginfo.php
 
+# Created by Query Monitor
+/wp-content/db.php
+
 # Include configuration
 /wp-config.php
 
