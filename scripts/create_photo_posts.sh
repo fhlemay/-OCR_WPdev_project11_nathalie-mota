@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Convert photos to webp before anything else
-./convert_and_resize_photos.sh
-
 # Get the directory of the current script
 SCRIPT_DIR=$(dirname "$0")
 
