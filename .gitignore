@@ -12,6 +12,7 @@
 /wp-content/themes/index.php
 /wp-content/themes/nathalie-mota/node_modules
 /wp-content/themes/nathalie-mota/package-lock.json
+/wp-content/themes/nathalie-mota/*.cache
 /wp-includes/
 /index.php
 /license.txt
