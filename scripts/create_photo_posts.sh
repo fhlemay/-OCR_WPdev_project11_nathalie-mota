@@ -7,6 +7,9 @@ SCRIPT_DIR=$(dirname "$0")
 CSV_FILE="$SCRIPT_DIR/photos-nathalie-mota.csv"
 PHOTOS_DIR="$SCRIPT_DIR/photos"
 
+# Initialize a counter for adding seconds to the date
+COUNTER=0
+
 # Read the CSV file skipping the first line (header)
 tail -n +2 "$CSV_FILE" | while IFS=',' read -r fichier titre reference categorie annee format type
 do
@@ -28,7 +31,15 @@ do
 
   # Optional: Set the post date if 'année' is to be used as the post date
   # You might need to ensure the date format is correct for your setup
-  wp post update $POST_ID --post_date="$annee-01-01"
+  # wp post update $POST_ID --post_date="$annee-01-01"
+
+  # Set the post date, adding one second for each post
+  DATE=$(date -u "+%Y-%m-%d %H:%M:%S" -d "$annee-01-01 UTC +$COUNTER minutes")
+  wp post update $POST_ID --post_date="$DATE"
+  echo "Set date for post $POST_ID to $DATE"
+
+  # Increment the counter
+  ((COUNTER++))
 
 done
 
