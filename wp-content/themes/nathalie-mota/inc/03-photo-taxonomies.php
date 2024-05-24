@@ -1,4 +1,7 @@
 <?php
+
+define('POST_TYPE_SLUG', 'photo');
+
 function create_photo_taxonomies()
 {
 
